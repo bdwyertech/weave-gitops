@@ -27,6 +27,7 @@ func (c *ClaimsConfig) PrincipalFromClaims(token claimsToken) (*UserPrincipal, e
 	var (
 		idKey     = ScopeEmail
 		groupsKey = ScopeGroups
+		rolesKey = "roles"
 	)
 
 	if c != nil && c.Username != "" {
@@ -53,6 +54,21 @@ func (c *ClaimsConfig) PrincipalFromClaims(token claimsToken) (*UserPrincipal, e
 		for _, v := range gv {
 			if s, ok := v.(string); !ok {
 				return nil, fmt.Errorf("invalid groups claim %q in response %v", groupsKey, v)
+			} else {
+				groups = append(groups, s)
+			}
+		}
+	}
+
+	if v, ok := claims[rolesKey]; ok {
+		gv, ok := v.([]interface{})
+		if !ok {
+			return nil, fmt.Errorf("invalid roles claim %q in response %v", rolesKey, v)
+		}
+
+		for _, v := range gv {
+			if s, ok := v.(string); !ok {
+				return nil, fmt.Errorf("invalid roles claim %q in response %v", rolesKey, v)
 			} else {
 				groups = append(groups, s)
 			}
