@@ -3,14 +3,15 @@ const versions = require("./versions.json");
 module.exports = {
   title: "Weave GitOps",
   tagline: "The Flux expansion pack from the founders of Flux",
-  url: process.env.DOC_URL || "https://docs.gitops.weave.works",
-  baseUrl: process.env.DOC_BASE_URL || "/",
+  url: process.env.DOC_URL || "https://bdwyertech.net",
+  baseUrl: process.env.DOC_BASE_URL || "/weave-gitops",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon_150px.png",
-  organizationName: "weaveworks", // Usually your GitHub org/user name.
+  organizationName: "bdwyertech", // Usually your GitHub org/user name.
   projectName: "weave-gitops", // Usually your repo name.
   trailingSlash: true,
+  deploymentBranch: "gh-pages",
   plugins: [
     () => ({
       // Load yaml files as blobs
@@ -33,11 +34,11 @@ module.exports = {
       },
     }),
     [
-        '@docusaurus/plugin-client-redirects',
+      '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
         redirects: [
-          { 
+          {
             to: '/docs/intro-weave-gitops/',
             from: ['/docs/getting-started'],
           },
@@ -131,38 +132,38 @@ module.exports = {
           ],
         },
         {
-            title: "Community",
-            items: [
-                {
-                label: "GitHub",
-                href: "https://github.com/weaveworks/weave-gitops",
-                },
-            ],
+          title: "Community",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/weaveworks/weave-gitops",
+            },
+          ],
         },
         {
-            title: 'Follow us',
-            items: [
-              {
-                label: 'Facebook',
-                href: 'https://www.facebook.com/WeaveworksInc/',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/weaveworks',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/weaveworks',
-              },
-              {
-                label: 'Slack',
-                href: 'https://slack.weave.works/',
-              },
-              {
-                label: 'Youtube',
-                href: 'https://www.youtube.com/c/WeaveWorksInc',
-              },
-            ],
+          title: 'Follow us',
+          items: [
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/WeaveworksInc/',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/weaveworks',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/weaveworks',
+            },
+            {
+              label: 'Slack',
+              href: 'https://slack.weave.works/',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://www.youtube.com/c/WeaveWorksInc',
+            },
+          ],
         },
       ],
       logo: {
@@ -225,10 +226,10 @@ module.exports = {
           anonymizeIP: true, // Should IPs be anonymized?
         },
         sitemap: {
-            changefreq: 'weekly',
-            priority: 0.5,
-            ignorePatterns: ['/tags/**'],
-            filename: 'sitemap.xml',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       },
     ],

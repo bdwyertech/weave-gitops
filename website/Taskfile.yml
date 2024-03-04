@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  build-deploy:
+    cmds:
+      - GA_KEY=fake ALGOLIA_API_KEY=fake yarn build
+      - GA_KEY=fake ALGOLIA_API_KEY=fake yarn deploy
