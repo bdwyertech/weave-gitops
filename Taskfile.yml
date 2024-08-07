@@ -1,0 +1,12 @@
+version: '3'
+
+env:
+  DEFAULT_DOCKER_REPO: ghcr.io/bdwyertech
+
+tasks:
+  build:
+    cmds:
+      - make docker-gitops-server
+  # deploy:
+  #   cmds:
+  #     - yarn deploy
