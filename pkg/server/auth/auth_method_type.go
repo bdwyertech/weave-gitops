@@ -24,7 +24,7 @@ const (
 
 // This is a function to mimic a const slice
 func DefaultAuthMethods() []AuthMethod {
-	return []AuthMethod{UserAccount, OIDC, TokenPassthrough}
+	return []AuthMethod{TokenPassthrough, UserAccount, OIDC}
 }
 
 // AllUserAuthMethods returns all the auth methods that can be configured via the
