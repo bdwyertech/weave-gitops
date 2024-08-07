@@ -1,12 +1,17 @@
 version: '3'
 
 env:
-  DEFAULT_DOCKER_REPO: ghcr.io/bdwyertech
+  HELLO: WORLD
 
 tasks:
   build:
+    env:
+      DOCKER_IMAGE_NAME: ghcr.io/bdwyertech/gitops-server
+      DOCKER_TAG: v0.38.1-alpha
     cmds:
       - make docker-gitops-server
+      - docker tag ghcr.io/bdwyertech/weave-gitops-server:latest ghcr.io/bdwyertech/weave-gitops-server:$DOCKER_TAG
+      - docker push ghcr.io/bdwyertech/weave-gitops-server:$DOCKER_TAG
   # deploy:
   #   cmds:
   #     - yarn deploy
