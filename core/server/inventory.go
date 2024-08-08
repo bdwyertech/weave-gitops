@@ -13,7 +13,7 @@ import (
 
 	helmv2 "github.com/fluxcd/helm-controller/api/v2beta2"
 	kustomizev1 "github.com/fluxcd/kustomize-controller/api/v1"
-	"github.com/fluxcd/pkg/ssa"
+	ssa "github.com/fluxcd/pkg/ssa/utils"
 	"github.com/go-logr/logr"
 	"github.com/weaveworks/weave-gitops/core/server/types"
 	pb "github.com/weaveworks/weave-gitops/pkg/api/core"

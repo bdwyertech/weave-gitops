@@ -7,7 +7,7 @@ hide_title: true
 
 ## Preflight Checks
 
-To set up the [Terraform Controller](https://github.com/weaveworks/tf-controller) (TF-Controller), follow the steps in the preflight checks. Here is a summary of what you will need to do:
+To set up the [Terraform Controller](https://github.com/flux-iac/tofu-controller) (TF-Controller), follow the steps in the preflight checks. Here is a summary of what you will need to do:
 
   1. Install Flux **v0.32.0** or later on your cluster. This includes installing the Flux CLI on your local machine and installing the Flux controllers on the cluster.
   2. Configure the network firewall or security groups on your cluster to allow incoming connections to **port 30000** on **each Runner's Pod in each namespace**.
@@ -111,15 +111,15 @@ helm upgrade -i tf-controller tf-controller/tf-controller \
 ```
 
 For details on configurable parameters of the TF-controller chart,
-please see [this chart Readme](https://github.com/weaveworks/tf-controller/tree/main/charts/tf-controller#tf-controller-for-flux).
+please see [this chart Readme](https://github.com/flux-iac/tofu-controller/tree/main/charts/tf-controller#tf-controller-for-flux).
 
 Alternatively, you can install TF-controller via `kubectl`:
 
 ```shell
 export TF_CON_VER=v0.14.0
-kubectl apply -f https://github.com/weaveworks/tf-controller/releases/download/${TF_CON_VER}/tf-controller.crds.yaml
-kubectl apply -f https://github.com/weaveworks/tf-controller/releases/download/${TF_CON_VER}/tf-controller.rbac.yaml
-kubectl apply -f https://github.com/weaveworks/tf-controller/releases/download/${TF_CON_VER}/tf-controller.deployment.yaml
+kubectl apply -f https://github.com/flux-iac/tofu-controller/releases/download/${TF_CON_VER}/tf-controller.crds.yaml
+kubectl apply -f https://github.com/flux-iac/tofu-controller/releases/download/${TF_CON_VER}/tf-controller.rbac.yaml
+kubectl apply -f https://github.com/flux-iac/tofu-controller/releases/download/${TF_CON_VER}/tf-controller.deployment.yaml
 ```
 
 ## Quick Start

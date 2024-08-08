@@ -200,7 +200,7 @@ MSFT maintains CAPZ, the Azure CAPI provider. Currently there is no support for 
 
 ### With Terraform Provider
 
-WGE uses [TF-controller](https://github.com/weaveworks/tf-controller) to deploy Terraform resources. For WGE to use the cluster as a target requires A) a resource created in the management cluster and B) a kubeconfig that maps to a service account in the target cluster. The Terraform cluster build typically creates this service account and then outputs to a secret store or local secret so that WGE can use it as a cluster. The Flux bootstrap process can be initiated directly with the Flux Terraform module, which deploys CNCF Flux to the target cluster.
+WGE uses [TF-controller](https://github.com/flux-iac/tofu-controller) to deploy Terraform resources. For WGE to use the cluster as a target requires A) a resource created in the management cluster and B) a kubeconfig that maps to a service account in the target cluster. The Terraform cluster build typically creates this service account and then outputs to a secret store or local secret so that WGE can use it as a cluster. The Flux bootstrap process can be initiated directly with the Flux Terraform module, which deploys CNCF Flux to the target cluster.
 
 Alternatively, you can apply an Azure Policy to provide the Azure Flux add-on. This is an example of how you can use the policy controls. This means you could come across clusters that are deployed with Terraform with the Azure Flux add-on already installed and would not run the Flux bootstrap process.
 

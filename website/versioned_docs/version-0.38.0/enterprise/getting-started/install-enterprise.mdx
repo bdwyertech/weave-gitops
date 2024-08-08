@@ -693,7 +693,7 @@ The following table lists resources that Flux works with directly.
 | helm.toolkit.fluxcd.io         | Helm Releases                                                            | get, list, patch |
 | source.toolkit.fluxcd.io       | buckets, Helm charts, Git repositories, Helm repositories, OCI repositories | get, list, patch |
 | notification.toolkit.fluxcd.io | providers, alerts                                                       | get, list        |
-| infra.contrib.fluxcd.io        | [Terraform](https://github.com/weaveworks/tf-controller)                                                             | get, list, patch |
+| infra.contrib.fluxcd.io        | [Terraform](https://github.com/flux-iac/tofu-controller)                                                             | get, list, patch |
 
  Weave GitOps needs to be able to query the [CRDs](https://fluxcd.io/docs/components/) that Flux uses before it can accurately display Flux state. The
 `get` and `list` permissions facilitate this.

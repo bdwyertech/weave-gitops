@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	helmv2 "github.com/fluxcd/helm-controller/api/v2beta2"
+	helmv2 "github.com/fluxcd/helm-controller/api/v2"
 	"github.com/fluxcd/pkg/runtime/transform"
 	sourcev1b2 "github.com/fluxcd/source-controller/api/v1beta2"
 	coretypes "github.com/weaveworks/weave-gitops/core/server/types"
@@ -364,7 +364,7 @@ func makeHelmRelease(log logger.Logger, name, namespace, username, passwordHash,
 			Interval: metav1.Duration{
 				Duration: 60 * time.Minute,
 			},
-			Chart: helmv2.HelmChartTemplate{
+			Chart: &helmv2.HelmChartTemplate{
 				Spec: helmv2.HelmChartTemplateSpec{
 					Chart: ossDashboardHelmChartName,
 					SourceRef: helmv2.CrossNamespaceObjectReference{

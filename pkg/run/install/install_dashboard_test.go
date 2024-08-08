@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	helmv2 "github.com/fluxcd/helm-controller/api/v2beta2"
+	helmv2 "github.com/fluxcd/helm-controller/api/v2"
 	"github.com/fluxcd/pkg/runtime/transform"
 	sourcev1b2 "github.com/fluxcd/source-controller/api/v1beta2"
 	"github.com/go-logr/logr"
@@ -66,7 +66,7 @@ var helmReleaseFixtures = []runtime.Object{
 			Name:      "dashboard-2",
 		},
 		Spec: helmv2.HelmReleaseSpec{
-			Chart: helmv2.HelmChartTemplate{
+			Chart: &helmv2.HelmChartTemplate{
 				Spec: helmv2.HelmChartTemplateSpec{
 					Chart: ossDashboardHelmChartName,
 				},
@@ -79,7 +79,7 @@ var helmReleaseFixtures = []runtime.Object{
 			Name:      "dashboard-3",
 		},
 		Spec: helmv2.HelmReleaseSpec{
-			Chart: helmv2.HelmChartTemplate{
+			Chart: &helmv2.HelmChartTemplate{
 				Spec: helmv2.HelmChartTemplateSpec{
 					Chart: enterpriseDashboardHelmChartName,
 					SourceRef: helmv2.CrossNamespaceObjectReference{
