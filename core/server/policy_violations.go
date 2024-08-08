@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/golang/protobuf/ptypes/any"
 	"github.com/hashicorp/go-multierror"
 	"github.com/weaveworks/weave-gitops/core/clustersmngr"
 	pb "github.com/weaveworks/weave-gitops/pkg/api/core"
@@ -271,7 +270,7 @@ func getPolicyValidationParam(raw []byte) ([]*pb.PolicyValidationParam, error) {
 	return parameters, nil
 }
 
-func getParamValue(param interface{}) (*any.Any, error) {
+func getParamValue(param interface{}) (*anypb.Any, error) {
 	if param == nil {
 		return nil, nil
 	}

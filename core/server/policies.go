@@ -9,7 +9,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/golang/protobuf/ptypes/any"
 	"github.com/hashicorp/go-multierror"
 	pacv2beta2 "github.com/weaveworks/policy-agent/api/v2beta2"
 	"github.com/weaveworks/weave-gitops/core/clustersmngr"
@@ -29,7 +28,7 @@ func getPolicyParamValue(param pacv2beta2.PolicyParameters, policyID string) (*a
 	if param.Value == nil {
 		return nil, nil
 	}
-	var anyValue *any.Any
+	var anyValue *anypb.Any
 	var err error
 	switch param.Type {
 	case "string":
